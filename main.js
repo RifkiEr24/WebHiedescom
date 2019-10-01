@@ -242,6 +242,8 @@ const prevS=document.querySelector('#prevSlide');
 const nextS=document.querySelector('#nextSlide');
 prevS.onclick = function() {
     
+    $(prevS).addClass( "disable" );  
+    $(nextS).removeClass( "disable" );
     $('path.st0').css('fill', 'rgb(209, 0, 209)');
     const timeline = anime.timeline({
       duration:2000,
@@ -257,7 +259,9 @@ prevS.onclick = function() {
     })
 }
 nextS.onclick = function() {
-
+  $(nextS).addClass( "disable" );  
+  $(prevS).removeClass( "disable" );
+  
   $('path.st0').css('fill', '#0089D1');
   const timeline = anime.timeline({
     duration:2000,
